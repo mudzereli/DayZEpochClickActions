@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="DayZ Epoch Click Actions : bind your own right click actions" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>DayZ Epoch Click Actions</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/mudzereli/DayZEpochClickActions">View on GitHub</a>
+
+          <h1 id="project_title">DayZ Epoch Click Actions</h1>
+          <h2 id="project_tagline">bind your own right click actions</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/mudzereli/DayZEpochClickActions/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/mudzereli/DayZEpochClickActions/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="dayz-custom-right-click-actions-302" class="anchor" href="#dayz-custom-right-click-actions-302"><span class="octicon octicon-link"></span></a>DayZ Custom Right Click Actions 3.0.2</h1>
+
+<p>This script lets you easily add right click actions to items on your server. </p>
+
+<p>Here is a screen shot showing some example right-click actions that are added to a GPS through the configuration.</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/39416623/pics/gps_rc.png" alt="GPS Right-Click" title="GPS Right-Click"></p>
+
+<p>The examples that are included (GPS Scan and Self Map Marker) are included as examples but do actually work so feel free to use them or remove them by taking them out of the config.</p>
+
+<p>The point of this script, however, is to allow users to easily add their own custom actions, so <a href="#custom-actions">see below for that</a>.</p>
+
+<hr><h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p><strong>skip this if you already have the <a href="https://github.com/mudzereli/DayZEpochDeployableBike" title="deploy anything">deploy anything</a> or <a href="https://github.com/mudzereli/DayZEpochSuicide" title="safe suicide">safe suicide</a> scripts</strong> (but make sure they are up to date)</p>
+
+<p>1) <a href="https://github.com/mudzereli/DayZEpochClickActions/archive/master.zip" title="download">download the click actions script</a></p>
+
+<p>2) copy only the <strong>overwrites</strong> folder from the download file to the <strong>root of your mission file/pbo</strong></p>
+
+<pre><code>- if you don't have this file and are using deploy/suicide then you need to update your deploy and suicide scripts
+</code></pre>
+
+<p>4) find this line in your <strong>init.sqf</strong> (<strong>warning</strong>: if you have a custom compiles file, find that line instead of the one below!)</p>
+
+<p><code>call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";</code></p>
+
+<p>5) place this line directly after the line you found</p>
+
+<p><code>call compile preprocessFileLineNumbers "overwrites\click_actions\init.sqf";</code></p>
+
+<hr><h2>
+<a name="change-log" class="anchor" href="#change-log"><span class="octicon octicon-link"></span></a>Change Log</h2>
+
+<table>
+<thead><tr>
+<th>version</th>
+<th>change</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>3.0.2</td>
+<td>default config update</td>
+</tr>
+<tr>
+<td>3.0.1</td>
+<td>better conflict handling when already loaded</td>
+</tr>
+<tr>
+<td>3.0.0</td>
+<td>github release</td>
+</tr>
+</tbody>
+</table><hr><h2>
+<a name="custom-actions" class="anchor" href="#custom-actions"><span class="octicon octicon-link"></span></a>Custom Actions</h2>
+
+<p>1) open <strong>overwrites\click_actions\config.sqf</strong> </p>
+
+<p>2) edit the <strong>DZE_CLICK_ACTIONS</strong> array to add your actions</p>
+
+<p><strong>FORMAT</strong> -- (note no comma after last array entry)</p>
+
+<pre><code>DZE_CLICK_ACTIONS = [
+    [_classname,_text,_execute,_condition],
+    [_classname,_text,_execute,_condition],
+    [...more stuff here...]
+];
+</code></pre>
+
+<table>
+<thead><tr>
+<th>parameter</th>
+<th>description</th>
+<th>example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>_classname</td>
+<td>the name of the class to click on</td>
+<td>"ItemBloodbag"</td>
+</tr>
+<tr>
+<td>_text</td>
+<td>the text for the option that is displayed when right clicking on the item</td>
+<td>"Self Transfuse"</td>
+</tr>
+<tr>
+<td>_execute</td>
+<td>string to execute when the option is selected</td>
+<td>"execVM 'my\scripts\self_transfuse.sqf';"</td>
+</tr>
+<tr>
+<td>_condition</td>
+<td>string to evaluate to determine whether or not the option is displayed</td>
+<td>"true"</td>
+</tr>
+</tbody>
+</table><p>*note: if you are having trouble getting the click actions to show up and are using my <a href="https://github.com/mudzereli/DayZEpochDeployableBike" title="deploy anything">deploy anything</a> or <a href="https://github.com/mudzereli/DayZEpochSuicide" title="safe suicide">safe suicide</a> scripts -- make sure they are up to date!!</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">DayZ Epoch Click Actions maintained by <a href="https://github.com/mudzereli">mudzereli</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
