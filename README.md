@@ -1,4 +1,4 @@
-#DayZ Custom Right Click Actions 3.0.2
+#DayZ Custom Right Click Actions 3.0.3
 
 This script lets you easily add right click actions to items on your server. 
 
@@ -37,6 +37,7 @@ The point of this script, however, is to allow users to easily add their own cus
 
 version | change
 --------|-------
+3.0.3   | update to prevent map marker causing people to get kicked for script restriction
 3.0.2   | default config update
 3.0.1   | better conflict handling when already loaded
 3.0.0   | github release
