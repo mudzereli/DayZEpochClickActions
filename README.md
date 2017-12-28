@@ -1,4 +1,4 @@
-#DayZ Custom Right Click Actions 3.0.3
+# DayZ Custom Right Click Actions 3.0.3
 
 This script lets you easily add right click actions to items on your server. 
 
@@ -12,7 +12,7 @@ The point of this script, however, is to allow users to easily add their own cus
 
 -----
 
-##Installation
+## Installation
 
 **skip this if you already have the [deploy anything](https://github.com/mudzereli/DayZEpochDeployableBike "deploy anything") or [safe suicide](https://github.com/mudzereli/DayZEpochSuicide "safe suicide") scripts** (but make sure they are up to date)
 
@@ -24,16 +24,20 @@ The point of this script, however, is to allow users to easily add their own cus
 
 4) find this line in your **init.sqf** (**warning**: if you have a custom compiles file, find that line instead of the one below!)
 
-```call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";```
+```sqf
+call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";
+```
 
 
 5) place this line directly after the line you found
 
-```call compile preprocessFileLineNumbers "overwrites\click_actions\init.sqf";```
+```sqf
+call compile preprocessFileLineNumbers "overwrites\click_actions\init.sqf";
+```
 
 -----
 
-##Change Log
+## Change Log
 
 version | change
 --------|-------
@@ -44,7 +48,7 @@ version | change
 
 -----
 
-##Custom Actions
+## Custom Actions
 
 1) open **overwrites\click_actions\config.sqf** 
 
